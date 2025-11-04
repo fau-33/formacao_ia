@@ -2,6 +2,7 @@ x = "global"
 
 
 def minha_funcao():
+    # global x
     x = "local"
     print("Dentro da funcao", x)
 
