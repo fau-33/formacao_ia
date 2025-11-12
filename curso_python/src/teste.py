@@ -1,1 +1,1 @@
-print(1 * 3 + 999)
+print("Hello, World!")
