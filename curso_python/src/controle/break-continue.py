@@ -13,3 +13,29 @@ for n in numeros:
     print(n, end=" ")
 
 print("fim")
+
+print("\n\n--- Exemplo 2 (Strings) ---")
+
+# Exemplo com continue: Imprimir apenas as consoantes (pular vogais e espaços)
+frase = "O Python eh legal"
+print(f"Frase original: {frase}")
+print("Apenas consoantes: ", end="")
+
+for letra in frase:
+    if letra.lower() in "aeiou ":
+        continue
+    print(letra, end="")
+
+print("\n")
+
+# Exemplo com break: Parar ao encontrar uma palavra "proibida" ou de parada
+comandos = ["andar", "pular", "correr", "parar", "agachar"]
+print(f"Lista de comandos: {comandos}")
+
+for comando in comandos:
+    if comando == "parar":
+        print("Comando 'parar' encontrado! Encerrando execução.")
+        break
+    print(f"Executando: {comando}")
+
+
