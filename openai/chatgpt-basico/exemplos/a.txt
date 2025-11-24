@@ -1,0 +1,25 @@
+```
+# Exemplo de como funciona o parâmetro top_p (Nucleus Sampling)
+# ================================================================
+
+# Contexto: o modelo precisa completar a frase
+O céu é
+
+# Probabilidades que o modelo atribui para cada próxima palavra:
+azul 0.4      # 40% de probabilidade - palavra mais provável
+limpo 0.3     # 30% de probabilidade
+bonito 0.2    # 20% de probabilidade
+nublado 0.1   # 10% de probabilidade - palavra menos provável
+
+# Configuração do top_p
+top_p = 0.9   # Considera apenas palavras que somam 90% da probabilidade
+
+# Como o núcleo é formado (acumulação de probabilidades):
+# azul:    0.4 (acumulado: 0.4)  ✓ Incluído
+# limpo:   0.3 (acumulado: 0.7)  ✓ Incluído
+# bonito:  0.2 (acumulado: 0.9)  ✓ Incluído - atingiu 90%!
+# nublado: 0.1 (acumulado: 1.0)  ✗ EXCLUÍDO - fora do núcleo
+
+# Resultado: o modelo escolherá aleatoriamente entre "azul", "limpo" ou "bonito"
+# A palavra "nublado" não será considerada pois está fora do top 90%
+```
