@@ -1,5 +1,5 @@
-from model.usuario import Usuario
+from model import Usuario
 
-usuario = Usuario("Flavio", "flavio@flavio.com")
+usuario = Usuario("Flavio Félix", "flavio@flavio.com")
 print(usuario)
 
